@@ -14,7 +14,6 @@ var debug = require("debug")("access-control.js");
 
 /******** Tequila *********/
 
-Tequila.options.bypass.push("/images/**");
 if (Meteor.isClient) {
     Tequila.options.autoStart = false;
 }
@@ -33,7 +32,7 @@ function signalServerError(module) {
     };
 }
 
-Tequila.options.onServerError = signalServerError("Tequila");
+Tequila.options.onClientError = signalServerError("Tequila");
 
 /**** Becoming another user *********/
 
