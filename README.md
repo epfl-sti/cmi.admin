@@ -1,15 +1,16 @@
 # Business databases of CMi
 
-## Deployment
+## Getting Started
 
-Copy and modify `meteor-settings.json.sample` to indicate point to the
-Kafka service (through the ZooKeeper IP and port), then run
+Assuming you already have [Meteor installed](https://www.meteor.com/install):
 
-```
-meteor run --settings meteor-settings.json
-```
+1. `git clone --recursive https://github.com/epfl-sti/cmi.admin.git`
+2. `meteor npm install`
+3. Copy and modify `meteor-settings.json.sample` to indicate point to the
+Kafka service (through the ZooKeeper IP and port)
+4. `meteor run --settings meteor-settings.json`
 
-## Code Convention
+## Developer Conventions
 
 [Meteor](https://www.meteor.com/) is a really free-form framework. We
 do have a few project-specific conventions, which make it easier to
