@@ -10,6 +10,15 @@ Assuming you already have [Meteor installed](https://www.meteor.com/install):
 Kafka service (through the ZooKeeper IP and port)
 4. `meteor run --settings meteor-settings.json`
 
+### Creating a user
+
+Run [`meteor mongo`](https://docs.meteor.com/commandline.html#meteormongo) and type
+<pre>
+db.users.insert({"_id": <i>"123456"</i>, "fullName": "<i>John Doe</i>"})
+</pre>
+(be sure to replace <code><i>123456</i></code> and <code><i>John Doe</i></code> with your SCIPER number and full name, respectively – Be sure to **keep the double quotes** around the SCIPER number!)
+
+
 ## Developer Conventions
 
 [Meteor](https://www.meteor.com/) is a really free-form framework. We
