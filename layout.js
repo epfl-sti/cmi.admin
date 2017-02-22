@@ -137,3 +137,16 @@ if (Meteor.isClient) {
     })
 }
 
+if (Meteor.isServer && WebApp.connectMiddleware) {  // Of https://github.com/meteor/meteor/pull/8403 fame
+  SSR.compileTemplate('error', Assets.getText("error.html"));
+  WebApp.connectMiddleware.use(function(err, req, res, next) {
+    var html = SSR.render('error', {error: err});
+    res.writeHead(500, {
+        'Connection': 'Close',
+        'Cache-Control': 'no-cache',
+        'Content-type': 'text/html; charset=UTF-8'
+    });
+    res.write(html);
+    res.end();
+  })
+}
